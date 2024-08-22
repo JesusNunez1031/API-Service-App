@@ -1,0 +1,69 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Python Rest Service",
+    "description": "Collection of endpoints to perform various tasks",
+    "contact": {
+      "name": "Dev Name",
+      "email": "apiteam@swagger.io"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7701"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Core Service",
+      "description": "Endpoints for the core application",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "tags": [
+          "Core Service"
+        ],
+        "summary": "Ping server",
+        "description": "Check if the server is up",
+        "responses": {
+          "200": {
+            "description": "Server is up",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ping"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Ping": {
+        "type": "object",
+        "properties": {
+          "response": {
+            "type": "object",
+            "example": "Pong! Service is up and running!"
+          }
+        }
+      }
+    }
+  }
+}
