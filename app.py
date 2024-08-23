@@ -7,5 +7,6 @@ CORS(app)
 app.register_blueprint(swagger.swagger_bp)
 app.register_blueprint(ping.ping_bp)
 
+# run app
 if __name__ =='__main__':
     app.run(host="0.0.0.0", port=7701, debug=True)
